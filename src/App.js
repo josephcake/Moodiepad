@@ -2,6 +2,7 @@ import './App.scss';
 import {Login} from './pages/Login'
 import {Home} from './pages/Home'
 import {Navigation} from './containers/Navigation'
+import {Footer} from './containers/Footer'
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
         <Home/>
         :
         <Login/>
-      }      
+      }  
+      <Footer/>    
     </div>
   );
 }

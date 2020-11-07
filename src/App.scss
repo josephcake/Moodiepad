@@ -1,4 +1,16 @@
 @import "./stylesheet/navigation.scss";
+@import "./stylesheet/footer.scss";
+
+#root {
+  height: 100vh;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 * {
   border: none;
