@@ -1,16 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {HOME, secondaryNavigationConstants} from "../constant/navigation-constant"
+import {NavigationItems} from '../components/NavigationItems'
 
 export const Navigation = () =>{
+
+    const [page, setPage] = useState(HOME)
+    console.log(page)
     return (
         <div className="navigation">
             <div className="navigation__item__left">
-                <div className="navigation__item">Home</div>
+                <div className="navigation__item">
+                    <button onClick={(e)=>setPage(e.target.innerText)} className="navigation__item-btn">
+                        HOME
+                    </button>
+                </div>
             </div>
             <div className="navigation__item__right">
-                <div className="navigation__item">Task</div>
-                <div className="navigation__item">History</div>
-                <div className="navigation__item">Profile</div>
-                <div className="navigation__item">Themes</div>
+                {
+                    secondaryNavigationConstants.map(items=><NavigationItems value={items} setPage={setPage}/>)
+                }            
             </div>
         </div>
 
