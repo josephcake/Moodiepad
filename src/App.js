@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {Login} from './pages/Login'
 import {Home} from './pages/Home'
 import {Navigation} from './containers/Navigation'
