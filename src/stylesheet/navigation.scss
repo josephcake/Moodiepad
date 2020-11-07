@@ -1,23 +1,35 @@
 .navigation {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   height: 50px;
-  width: 100%;
   // border: solid 1px coral;
   background-color: rgba(0, 0, 0, 0.8);
   &__item {
+    display: flex;
     color: white;
-    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    &-btn {
+      font-size: 20px;
+      letter-spacing: 2px;
+      width: auto;
+      color: white;
+      cursor: pointer;
+      background-color: transparent;
+      &:hover {
+        border-bottom: solid 2px white;
+      }
+    }
     &__left {
-      display: flex;
-      width: 50%;
+      width: 15%;
     }
     &__right {
       width: 50%;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
   }
 }

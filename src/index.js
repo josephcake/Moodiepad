@@ -8,8 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route path="/test" exact component={Test}/>
-          
+        <Route path="/test" exact component={Test}/>          
         <Route path="/">
           <App />
         </Route>

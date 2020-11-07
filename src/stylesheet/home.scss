@@ -1,0 +1,13 @@
+.home-container {
+  border: lightcoral solid 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  &__item {
+    border: lightcoral solid 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

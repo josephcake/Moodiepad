@@ -9,7 +9,7 @@ function App() {
   //check token, if token => Home 
   // else => Login
 
-  let login = false
+  let login = true
   return (  
     <div className="App">
       <Navigation/>      
