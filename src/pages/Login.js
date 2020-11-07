@@ -7,6 +7,4 @@ export const Login = () => {
             login
         </div>
     )
-    
-
 }
