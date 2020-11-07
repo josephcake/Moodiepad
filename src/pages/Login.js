@@ -21,9 +21,9 @@ export const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formState);
-    axios.get("http://localhost:5000/", formState).then((res) => {
+    axios.post("http://localhost:5000/users", formState).then((res) => {
       // send up data  in props to check if user is logged in
-      console.log(res.data);
+      console.log("returned", res.data);
     });
   };
 

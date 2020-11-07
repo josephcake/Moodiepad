@@ -2,11 +2,13 @@ const router = require("express").Router();
 
 let User = require("../models/user.model");
 
-router.route("/").get((req, res) => {
-  console.log("this is in the back", res.username);
-  User.findOne({ username: res.username })
+router.route("/").post((req, res) => {
+  //   console.log("this is in the back", res.username);
+  console.log(req.body);
+  let username = req.body.username;
+  let password = req.body.password;
+  User.findOne({ username: username, password: password })
     .then((users) => res.json(users))
-    .then(console.log("please work"))
     .catch((err) => res.status(400).json("Error: from catch" + err));
 });
 

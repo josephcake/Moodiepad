@@ -7,7 +7,7 @@ import { Footer } from "./containers/Footer";
 import { NavigationProvider } from "./context/NavigationContext";
 
 function App() {
-  let login = true;
+  let login = false;
 
   return (
     <NavigationProvider>
