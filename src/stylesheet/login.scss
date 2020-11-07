@@ -1,0 +1,50 @@
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.initialize {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid black 2px;
+  height: 70%;
+  width: 50%;
+  & div,
+  form {
+    padding: 50px;
+  }
+  &__text {
+    font-size: 20px;
+    text-align: center;
+  }
+  &__selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    &__login-btn {
+    }
+    &__register-btn {
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    & input {
+      width: 70%;
+      border-bottom: lightgray solid 1px;
+    }
+    & button {
+      width: 70%;
+    }
+    &__submit-btn {
+    }
+  }
+}

@@ -12,8 +12,7 @@ function App() {
   let login = false
   return (  
     <div className="App">
-      <Navigation/>
-      App
+      <Navigation/>      
       {
         login
         ?
