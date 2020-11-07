@@ -11,7 +11,6 @@ export const Login = (props) => {
 
   const handleChange = (e) => {
     e.persist();
-    console.log(e.target.value);
     // const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
     setFormState((prevState) => ({
       ...prevState,
@@ -22,7 +21,8 @@ export const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formState);
-    axios.post("http://localhost:5000/users/add", formState).then((res) => {
+    axios.get("http://localhost:5000/", formState).then((res) => {
+      // send up data  in props to check if user is logged in
       console.log(res.data);
     });
   };

@@ -3,9 +3,11 @@ const router = require("express").Router();
 let User = require("../models/user.model");
 
 router.route("/").get((req, res) => {
-  User.find()
+  console.log("this is in the back", res.username);
+  User.findOne({ username: res.username })
     .then((users) => res.json(users))
-    .catch((err) => res.status(400).json("Error: " + err));
+    .then(console.log("please work"))
+    .catch((err) => res.status(400).json("Error: from catch" + err));
 });
 
 router.route("/add").post((req, res) => {
@@ -27,7 +29,10 @@ router.route("/add").post((req, res) => {
 
   newUser
     .save()
-    .then(() => res.json("User added!"))
+    .then((res) => {
+      //   console.log(res);
+      res.json("User added!");
+    })
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
