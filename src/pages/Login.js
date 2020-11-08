@@ -23,9 +23,10 @@ export const Login = (props) => {
     console.log(formState);
     axios.post("http://localhost:5000/users", formState).then((res) => {
       // send up data  in props to check if user is logged in
-      console.log("returned", res.data);
+      props.userLogin(res.data);
     });
   };
+  //   console.log(props);
 
   return (
     <div className="login">
