@@ -9,6 +9,7 @@ import { NavigationProvider } from "./context/NavigationContext";
 function App() {
   const [state, setState] = useState({
     user: "",
+
     login: false,
   });
 
@@ -16,9 +17,8 @@ function App() {
 
   const userLogin = (obj) => {
     if (obj) {
-      console.log("log in the user", obj);
       setState((prevState) => ({
-        ...obj,
+        user: obj.username,
         login: !prevState.login,
       }));
     } else {
