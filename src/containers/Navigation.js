@@ -9,7 +9,7 @@ export const Navigation = () =>{
     // console.log(page)
     return (
         <NavigationContext.Consumer>
-            {({setPage, HOME, secondaryNavigationConstants})=>{                             
+            {({setPage, HOME,THEME, theme,setTheme, secondaryNavigationConstants})=>{                             
                 return (
                 <div className="navigation">
                     <div className="navigation__item__left">
@@ -22,7 +22,10 @@ export const Navigation = () =>{
                     <div className="navigation__item__right">
                         {
                             secondaryNavigationConstants.map(items=><NavigationItems key={items} value={items} setPage={setPage}/>)
-                        }            
+                        }      
+                        <div className="navigation__item">
+                            <button onClick={()=>setTheme(!theme)} className="navigation__item-btn" >{THEME}</button>
+                        </div>      
                     </div>
                 </div>
                 )}}

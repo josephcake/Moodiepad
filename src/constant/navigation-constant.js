@@ -4,6 +4,6 @@ export const   HOME    = "HOME",
         PROFILE = "PROFILE",
         THEME   = "THEME";
 
-export const secondaryNavigationConstants = [TASK, HISTORY, PROFILE, THEME]
+export const secondaryNavigationConstants = [TASK, HISTORY, PROFILE]
 
 // export {HOME, TASK, HISTORY, PROFILE, THEME}
