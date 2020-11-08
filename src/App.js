@@ -6,9 +6,10 @@ import { Navigation } from "./containers/Navigation";
 import { Footer } from "./containers/Footer";
 import { NavigationProvider } from "./context/NavigationContext";
 
+
 function App() {
   const [state, setState] = useState({
-    user: "",
+    user: {},
 
     login: false,
   });
@@ -17,8 +18,10 @@ function App() {
 
   const userLogin = (obj) => {
     if (obj) {
+      localStorage.token="logged"
+
       setState((prevState) => ({
-        user: obj.username,
+        user: obj,
         login: !prevState.login,
       }));
     } else {
@@ -31,7 +34,12 @@ function App() {
     <NavigationProvider>
       <div className="App">
         <Navigation />
-        {login ? <Main /> : <Login userLogin={userLogin} />}
+        {
+          login || localStorage.token === "logged"
+          ? 
+          <Main /> 
+          : 
+          <Login userLogin={userLogin} />}
         <Footer />
       </div>
     </NavigationProvider>

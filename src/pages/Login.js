@@ -41,7 +41,7 @@ export const Login = (props) => {
 
         <form className="initialize__form" onSubmit={handleSubmit}>
           <input
-            classNamme="initialize__form__input"
+            className="initialize__form__input"
             type="text"
             placeholder="e-mail"
             name="username"
@@ -49,7 +49,7 @@ export const Login = (props) => {
             onChange={handleChange}
           />
           <input
-            classNamme="initialize__form__input"
+            className="initialize__form__input"
             type="password"
             placeholder="password"
             name="password"

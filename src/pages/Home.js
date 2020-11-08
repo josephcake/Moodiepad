@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Task} from '../containers/Task'
 import {Bar, Line} from 'react-chartjs-2'
 
 export const Home = () =>{
+
+
+    const [toggle, setToggle] = useState(false)
     return (
         <div className="home-container">            
             <div className="home-container__item">
@@ -40,7 +43,13 @@ export const Home = () =>{
 
                 
             </div>
-            <div className="home-container__float">
+            <div className={`${toggle?'home-container__float-out':'home-container__float-in'}`}>
+                <div 
+                    className={"float-toggler"}
+                    onClick={()=>setToggle(!toggle)}
+                >
+                    <img src={"https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"} alt="arrow"/>
+                </div>
                 <Task/>
             </div>
         </div>
