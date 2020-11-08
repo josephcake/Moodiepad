@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { HOME, TASK, HISTORY } from "../constant/navigation-constant";
 import { NavigationContext } from "../context/NavigationContext";
+import { UserProvider, UserContext } from "../context/UserContext";
+
 import { Home } from "./Home";
 import { TaskPage } from "./Task";
 import { History } from "./History";

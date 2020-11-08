@@ -8,7 +8,7 @@ export const UserProvider = (props) =>{
     return (
         <UserContext.Provider 
             value={
-                [pagusere, setUser],
+                [user, setUser],
                 {
                 user:user,
                 setUser,setUser                
