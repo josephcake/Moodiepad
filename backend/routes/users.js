@@ -3,11 +3,17 @@ const router = require("express").Router();
 let User = require("../models/user.model");
 
 router.route("/").get((req, res) => {
-  console.log("this is in the back", res.username);
-  User.findOne({ username: res.username })
+
+  // console.log("this is in the back", res.username);  
+  // User.findOne({ username: res.username })
+  //   .then((users) => res.json(users))
+  //   .then(console.log("please work"))    
+  //   .catch((err) => res.status(400).json("Error: from catch" + err));
+
+  User.find()
     .then((users) => res.json(users))
-    .then(console.log("please work"))
-    .catch((err) => res.status(400).json("Error: from catch" + err));
+    .then(console.log)
+
 });
 
 router.route("/add").post((req, res) => {

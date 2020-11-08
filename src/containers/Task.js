@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
+import {TaskItem} from '../components/TaskItem'
 
 export const Task = () => {    
+
+
 
     const [input, setInput] = useState()
     const [taskList, setTaskList] = useState([
@@ -23,7 +26,6 @@ export const Task = () => {
     ])
  
     const checkList = (value) => {       
-
         if(!value.trim().length){
             return setInput("")
         }
@@ -34,12 +36,22 @@ export const Task = () => {
         let newTask = {
             value:value,
             completed:false
-        }        
-        
+        }                
         setTaskList([...taskList, newTask])
     }
 
-    console.log(input)
+    const deleteTaskList = (e) =>{
+        // debugger
+        let newTaskList = taskList
+        let completedTask = newTaskList.find((task)=>{return task.value === e.target.innerText})
+        completedTask.completed = true
+        console.log(taskList)
+        // setTaskList((ps)=>{
+        //     return newTaskList
+        // })
+    }
+
+    console.log('rerendered')
     return (
         <div className="task-container">
             <div className="task-container__inner">
@@ -63,9 +75,7 @@ export const Task = () => {
             
             <div className="task-container__tasks">                
                 {
-                    taskList.map(data=>{
-                        return <div className="task">{data.value}</div>
-                    })
+                    taskList.map(data => <TaskItem data={data} deleteTaskList={deleteTaskList}/>)
                 }
 
             </div>

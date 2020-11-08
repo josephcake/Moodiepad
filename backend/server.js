@@ -2,13 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-require("dotenv").config();
+require("dotenv").config({path: '../.env'});
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
 
 const uri = process.env.REACT_APP_ATLAS_URI;
 console.warn(process.env.REACT_APP_ATLAS_URI);
@@ -32,5 +33,5 @@ app.use("/users", usersRouter);
 // app.use("/moods", moodsRouter);
 
 app.listen(port, () => {
-  console.log(`server is runnign on port: ${port}`);
+  console.log(`server is running on port: ${port}`);
 });
