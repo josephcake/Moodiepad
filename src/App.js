@@ -9,7 +9,6 @@ import { NavigationProvider } from "./context/NavigationContext";
 function App() {
   const [state, setState] = useState({
     user: "",
-
     login: false,
   });
 
@@ -26,12 +25,12 @@ function App() {
     }
   };
 
-  console.log("this is the state", state);
+  // console.log("this is the state", state);
   return (
     <NavigationProvider>
       <div className="App">
         <Navigation />
-        {login ? <Main /> : <Login userLogin={userLogin} />}
+        {login ? <Main user={state.user} /> : <Login userLogin={userLogin} />}
         <Footer />
       </div>
     </NavigationProvider>
