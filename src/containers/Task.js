@@ -3,7 +3,7 @@ import { TaskItem } from "../components/TaskItem";
 import axios from "axios";
 
 export const Task = (props) => {
-  const { _id, username, dailytask } = props.user;
+//   const { id, username, dailytask } = props.user;
   const [input, setInput] = useState();
   const [taskList, setTaskList] = useState([
     {
@@ -41,6 +41,7 @@ export const Task = (props) => {
     // put this inside the return of the fetch request
     axios.put("http://localhost:5000/users/update/:id");
     setTaskList([...taskList, newTask]);
+    setInput("")
   };
 
   const deleteTaskList = (e) => {
@@ -55,7 +56,7 @@ export const Task = (props) => {
     // })
   };
 
-  console.log("from the task.js", props.user._id);
+//   console.log("from the task.js", props.user._id);
   return (
     <div className="task-container">
       <div className="task-container__inner">

@@ -14,14 +14,23 @@ export const Main = (props) => {
   // console.log(NavigationContext)
   console.log("from the main", page, setPage, props);
   return (
-    <div className="main">
-      {page === TASK ? (
-        <TaskPage />
-      ) : page === HISTORY ? (
-        <History user={props.user} />
-      ) : (
-        <Home user={props.user} />
-      )}
-    </div>
+    <UserProvider>
+      <UserContext.Consumer>
+        {({user, setUser})=>{
+          return (
+          <div className="main">
+            {page === TASK ? (
+              <TaskPage />
+            ) : page === HISTORY ? (
+              <History user={user} />
+            ) : (
+              <Home user={user} />
+            )}
+          </div>
+          )
+        }}
+      </UserContext.Consumer>
+    </UserProvider>
+
   );
 };

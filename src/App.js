@@ -10,10 +10,6 @@ import { NavigationProvider } from "./context/NavigationContext";
 function App() {
   const [state, setState] = useState({
     user: {},
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     login: false,
   });
 
@@ -21,8 +17,7 @@ function App() {
 
   const userLogin = (obj) => {
     if (obj) {
-      localStorage.token="logged"
-
+      localStorage.token=JSON.stringify(obj)
       setState((prevState) => ({
         user: obj,
         login: !prevState.login,
@@ -32,21 +27,18 @@ function App() {
     }
   };
 
-  // console.log("this is the state", state)
+  // console.log("this is the state", state)  
   return (
     <NavigationProvider>
       <div className="App">
         <Navigation />
-<<<<<<< HEAD
-        {login ? <Main user={state.user} /> : <Login userLogin={userLogin} />}
-=======
         {
-          login || localStorage.token === "logged"
+          login || localStorage.token
           ? 
-          <Main /> 
+          <Main user={state.user}/>           
           : 
-          <Login userLogin={userLogin} />}
->>>>>>> master
+          <Login userLogin={userLogin} />
+        }
         <Footer />
       </div>
     </NavigationProvider>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const History = (props) => {
+export const History = ({user}) => {
   const [state, setState] = useState({
     historyMood: [],
     historyTask: [],
   });
-  const { username, password } = props.user;
+  // debugger
+  const { username, password } = user;
   useEffect(() => {
     axios
       .post("http://localhost:5000/users", {
