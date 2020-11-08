@@ -8,7 +8,7 @@ import { NavigationProvider } from "./context/NavigationContext";
 
 function App() {
   const [state, setState] = useState({
-    user: "",
+    user: {},
     login: false,
   });
 
@@ -17,7 +17,7 @@ function App() {
   const userLogin = (obj) => {
     if (obj) {
       setState((prevState) => ({
-        user: obj.username,
+        user: obj,
         login: !prevState.login,
       }));
     } else {
@@ -25,7 +25,7 @@ function App() {
     }
   };
 
-  // console.log("this is the state", state);
+  // console.log("this is the state", state)
   return (
     <NavigationProvider>
       <div className="App">

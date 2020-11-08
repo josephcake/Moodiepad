@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const History = ({ user }) => {
+export const History = (props) => {
   const [state, setState] = useState({
     historyMood: [],
     historyTask: [],
   });
+  const { username, password } = props.user;
   useEffect(() => {
     axios
-      .post("http://localhost:5000/users", { username: user, password: "asdf" })
+      .post("http://localhost:5000/users", {
+        username: username,
+        password: password,
+      })
       .then((res) => {
         // send up data  in props to check if user is logged in
         console.log(res.data);
@@ -23,7 +27,7 @@ export const History = ({ user }) => {
   const renderMoods = (a) => {
     return state.historyMood.map((mood) => {
       return (
-        <li>
+        <li key={Math.random()}>
           Morning rating: {mood.am} || Noon rating: {mood.noon} || Evening
           rating: {mood.pm}
         </li>
@@ -33,7 +37,7 @@ export const History = ({ user }) => {
   const renderTasks = (a) => {
     return state.historyTask.map((task) => {
       return (
-        <li>
+        <li key={Math.random()}>
           Description: {task.task} || Completed: {Date()}
         </li>
       );

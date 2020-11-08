@@ -10,7 +10,7 @@ export const Main = (props) => {
   const { page, setPage } = useContext(NavigationContext);
 
   // console.log(NavigationContext)
-  //   console.log(page, setPage, props);
+  console.log("from the main", page, setPage, props);
   return (
     <div className="main">
       {page === TASK ? (
@@ -18,7 +18,7 @@ export const Main = (props) => {
       ) : page === HISTORY ? (
         <History user={props.user} />
       ) : (
-        <Home />
+        <Home user={props.user} />
       )}
     </div>
   );
