@@ -1,10 +1,10 @@
-import React from 'react';
-import {Task} from '../containers/Task'
+import React from "react";
+import { Task } from "../containers/Task";
 
-export const TaskPage = () =>{
-    return(
-        <div className="task-page">
-            <Task/>
-        </div>
-    )
-}
+export const TaskPage = () => {
+  return (
+    <div className="task-page">
+      <Task />
+    </div>
+  );
+};

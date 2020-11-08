@@ -47,6 +47,16 @@
   width: 100%;
   scrollbar-width: none;
   scrollbar-color: transparent;
+
+  &__completed {
+    text-decoration: line-through;
+    color: rgb(175, 52, 52);
+    padding: 15px;
+    border-bottom: lightgray dotted 1px;
+    width: 100%;
+    scrollbar-width: none;
+    scrollbar-color: transparent;
+  }
   &::-webkit-scrollbar {
     display: none;
   }
