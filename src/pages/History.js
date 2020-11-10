@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const History = ({user}) => {
+export const History = ({ user }) => {
   const [state, setState] = useState({
     historyMood: [],
     historyTask: [],
@@ -55,6 +55,7 @@ export const History = ({user}) => {
       </div>
       <div>
         <h1>Tasks</h1>
+        <div>\\</div>
         <ul>{renderTasks()}</ul>
       </div>
     </div>
